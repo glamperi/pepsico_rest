@@ -1,0 +1,26 @@
+# Edit the template parameters below to see how they will render in the scaffolder form UI
+parameters:
+  - title: pepsico-rest
+    required:
+      - name
+    properties:
+      name:
+        title: cats
+        type: string
+        description: type of cat
+      
+  
+steps:
+  - id: http-request
+    name: Fetch Cats
+    action: http:backstage:request
+    input:
+      values:
+        path: https://api.thecatapi.com/v1/images/0XYvRd7oD
+
+   - id: debug-cats
+     name: Debug Cats
+     action: debug:log
+     input: 
+       values:
+         message: steps.http-request.output.body
