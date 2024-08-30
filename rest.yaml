@@ -38,4 +38,4 @@ steps:
     action: debug:log
     input: 
       values:
-       message: steps.http-request.output.body
+       message: ${{ steps.http-request.output.body }}
