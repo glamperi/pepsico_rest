@@ -1,38 +1,43 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: HTTP-testing
-  title: Http testing for post/get
-  description: Testing get functionality with get
+  name: rest test
+  title: Pepsico REST 1.0
+  description: Just a REST TEST
+  tags:
+    - rest
 spec:
   owner: rhdh
   type: service
+  
 
-  parameters:
-    - title: Fill in some params
-      properties:
-        httpGetPath:
-          title: Get Path
-          type: string
-          description: The path you want to get on your backstage instance
-          ui:autofocus: true
-          ui:options:
-            rows: 5
+
+
+# Edit the template parameters below to see how they will render in the scaffolder form UI
+parameters:
+  - title: pepsico-rest
+    required:
+      - name
+    properties:
+      name:
+        title: cats
+        type: string
+        description: type of cat
       
   
 steps:
-  - id: backstage_request
-    name: Fetch Cats
-    action: http:backstage:request
-    input:
-      path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
-      method: 'GET'
-      headers:
+  
+   - id: backstage_request
+      name: backstage request
+      action: http:backstage:request
+      input:
+        method: 'GET'
+        path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
+        headers:
           test: 'hello'
           foo: 'bar'
 
 
-      
 output:
   getResponse: '{{ steps.backstage_request.output.body }}'
   getCode: '{{ steps.backstage_request.output.code }}'
