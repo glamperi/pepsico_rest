@@ -1,7 +1,7 @@
 apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
-  name: pepsico service call 1.0
+  name: pepsico service call 1.1
   title: Pepsico Rest
   description: The Pepsico Rest
   tags:
@@ -11,20 +11,36 @@ spec:
   owner: rhdh
   type: service
 
-
+parameters:
+  - title: Provide Dev Flow Variables 
+    required:
+      - approvalcode
+    properties:
+      approvalcode:
+        title: Service Now Approval Code
+        type: string 
 
 
   
 steps:
-  - id: backstage_request
-    name: backstage request
-    action: http:backstage:request
+#  - id: backstage_request
+#    name: backstage request
+#    action: http:backstage:request
+#    input:
+#      method: 'GET'
+#      path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
+#      headers:
+#        content-type: 'application/json'
+
+
+  - id: snowretrieve
+    name: Verify ServiceNow Approval
+    action: servicenow:now:table:retrieveRecord
     input:
-      method: 'GET'
-      path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
-      headers:
-        content-type: 'application/json'
-output:
-  getResponse: '{{ steps.backstage_request.output.body }}'
-  getCode: '{{ steps.backstage_request.output.code }}'
-  getHeaders: '{{ steps.backstage_request.output.headers }}'
+      tableName: x_1520818_pepsico_pepsionboarding
+      sysId: "${{ parameters.approvalcode }}"
+      
+#output:
+#  getResponse: '{{ steps.backstage_request.output.body }}'
+#  getCode: '{{ steps.backstage_request.output.code }}'
+#  getHeaders: '{{ steps.backstage_request.output.headers }}'
