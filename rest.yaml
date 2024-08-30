@@ -12,20 +12,16 @@ spec:
   type: service
   
   
-
-      
-  
 steps:
-  
-   - id: backstage_request
-      name: backstage request
-      action: http:backstage:request
-      input:
-        method: 'GET'
-        path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
-        headers:
-          test: 'hello'
-          foo: 'bar'
+  - id: backstage_request
+    name: backstage request
+    action: http:backstage:request
+    input:
+      method: 'GET'
+      path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
+      headers:
+        test: 'hello'
+        foo: 'bar'
 
 
 output:
