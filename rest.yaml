@@ -24,8 +24,6 @@ steps:
       path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
       headers:
         content-type: 'application/json'
-      
-
 output:
   getResponse: '{{ steps.backstage_request.output.body }}'
   getCode: '{{ steps.backstage_request.output.code }}'
