@@ -21,7 +21,7 @@ steps:
     action: http:backstage:request
     input:
       method: 'POST'
-      path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
+      path: "https://api.thecatapi.com/v1/images/0XYvRd7oD"
       
 
 output:
