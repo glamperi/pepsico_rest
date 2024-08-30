@@ -36,11 +36,7 @@ steps:
           test: 'hello'
           foo: 'bar'
 
-  - id: debug-cats
-    name: Debug Cats
-    action: debug:log
-    input: 
-      message: 'test here'
+
       
 output:
   getResponse: '{{ steps.backstage_request.output.body }}'
