@@ -26,14 +26,23 @@ parameters:
       
   
 steps:
-  - id: http-request
+  - id: backstage_request
     name: Fetch Cats
     action: http:backstage:request
     input:
       path: https://api.thecatapi.com/v1/images/0XYvRd7oD
+      method: 'GET'
+      headers:
+          test: 'hello'
+          foo: 'bar'
 
   - id: debug-cats
     name: Debug Cats
     action: debug:log
     input: 
       message: 'test here'
+      
+output:
+  getResponse: '{{ steps.backstage_request.output.body }}'
+  getCode: '{{ steps.backstage_request.output.code }}'
+  getHeaders: '{{ steps.backstage_request.output.headers }}'
