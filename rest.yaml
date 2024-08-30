@@ -30,8 +30,7 @@ steps:
     name: Fetch Cats
     action: http:backstage:request
     input:
-      values:
-        path: https://api.thecatapi.com/v1/images/0XYvRd7oD
+      path: https://api.thecatapi.com/v1/images/0XYvRd7oD
 
   - id: debug-cats
     name: Debug Cats
