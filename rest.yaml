@@ -1,3 +1,18 @@
+apiVersion: scaffolder.backstage.io/v1beta3
+kind: Template
+metadata:
+  name: rest test
+  title: Pepsico REST 1.0
+  description: Just a REST TEST
+  tags:
+    - rest
+spec:
+  owner: rhdh
+  type: service
+  
+
+
+
 # Edit the template parameters below to see how they will render in the scaffolder form UI
 parameters:
   - title: pepsico-rest
