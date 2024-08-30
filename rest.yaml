@@ -12,15 +12,12 @@ spec:
   type: service
 
 parameters:
-  - title: Fill in some params
-    properties:
-    httpGetPath:
-      title: Get Path
-      type: string
-      description: The path you want to get on your backstage instance
-      ui:autofocus: true
-      ui:options:
-        rows: 5  
+ - title: Provide Dev Flow Variables 
+  properties:
+    approvalcode:
+    title: Service Now Approval Code
+    type: string 
+  
 
 
   
