@@ -10,15 +10,14 @@ metadata:
 spec:
   owner: rhdh
   type: service
-
-parameters:
-  - title: Provide Dev Flow Variables 
-    required:
-      - approvalcode
-    properties:
-      approvalcode:
-        title: Service Now Approval Code
-        type: string 
+  parameters:
+    - title: Provide Dev Flow Variables 
+      required:
+        - approvalcode
+      properties:
+        approvalcode:
+          title: Service Now Approval Code
+          type: string 
 
 
   
