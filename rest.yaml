@@ -10,7 +10,19 @@ metadata:
 spec:
   owner: rhdh
   type: service
-  
+
+parameters:
+  - title: Fill in some params
+    properties:
+    httpGetPath:
+      title: Get Path
+      type: string
+      description: The path you want to get on your backstage instance
+      ui:autofocus: true
+      ui:options:
+        rows: 5  
+
+
   
 steps:
   - id: backstage_request
