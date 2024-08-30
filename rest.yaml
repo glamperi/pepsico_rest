@@ -18,9 +18,9 @@ steps:
       values:
         path: https://api.thecatapi.com/v1/images/0XYvRd7oD
 
-   - id: debug-cats
-     name: Debug Cats
-     action: debug:log
-     input: 
-       values:
-         message: steps.http-request.output.body
+  - id: debug-cats
+    name: Debug Cats
+    action: debug:log
+    input: 
+      values:
+       message: steps.http-request.output.body
