@@ -17,7 +17,7 @@ steps:
     name: backstage request
     action: http:backstage:request
     input:
-      method: 'GET'
+      method: 'POST'
       path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
       
 
