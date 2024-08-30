@@ -11,13 +11,7 @@ spec:
   owner: rhdh
   type: service
 
-parameters:
- - title: Provide Dev Flow Variables 
-  properties:
-    approvalcode:
-    title: Service Now Approval Code
-    type: string 
-  
+
 
 
   
