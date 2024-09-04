@@ -30,6 +30,12 @@ spec:
       input:
         method: 'GET'
         path: 'proxy/pepsico-service/api/hello'
+
+    - id: log-message
+      name: Log Message
+      action: debug:log
+      input:
+        message: 'the body - {{ steps["restpepsi"].output.body }}'
        
         
       
