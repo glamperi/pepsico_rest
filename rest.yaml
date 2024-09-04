@@ -44,9 +44,9 @@ spec:
     - title: REST content
       content: |
         The info: 
-        - ResponseObject: ${{ steps.restpepsi.output.body }}
+        - ResponseObject: ${{ steps.restpepsi.output.body | dump }}
         - ResponseCode: ${{ steps.restpepsi.output.code }}
-        - ResponseHeaders: ${{ steps.restpepsi.output.headers }}
+        - ResponseHeaders: ${{ steps.restpepsi.output.headers | dump }}
 
 
 
