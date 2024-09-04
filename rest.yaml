@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: pepsico-rest-call
-  title: Pepsico Rest 2.2
+  title: Pepsico Rest 2.3
   description: The Pepsico Rest
   tags:
     - rest
@@ -40,6 +40,14 @@ spec:
         
       
   output:
-    getResponse: ${{ steps.restpepsi.output.body }}'
-    getCode: ${{ steps.restpepsi.output.code }}'
-    getHeaders: ${{ steps.restpepsi.output.headers }}'
+    text: 
+    - title: REST content
+    content: |
+      The info: 
+      - getResponse: '${{ steps.restpepsi.output.body }}'
+      - getCode: '${{ steps.restpepsi.output.code }}'
+      - getHeaders: '${{ steps.restpepsi.output.headers }}'
+
+
+
+ 
