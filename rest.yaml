@@ -37,15 +37,15 @@ spec:
       action: http:backstage:request
       input:
         method: 'POST'
-        path: 'https://test-app-2099-dev-test-app-2099-dev.apps.cluster-qmdjh.qmdjh.sandbox1439.opentlc.com/api/hello'
+        path: '/test-app-2099-dev-test-app-2099-dev.apps.cluster-qmdjh.qmdjh.sandbox1439.opentlc.com/api/hello'
         headers:
-            test: 'hello'
-            foo: 'bar'
+          test: 'hello'
+          foo: 'bar'
         body:
-            name: 'test'
-            bar: 'foo'
+          name: 'test'
+          bar: 'foo'
       
 output:
-  getResponse: '{{ steps.restpepsi.output.body }}'
-  getCode: '{{ steps.restpepsi.output.code }}'
-  getHeaders: '{{ steps.restpepsi.output.headers }}'
+  getResponse: ${{ steps.restpepsi.output.body }}
+  getCode: ${{ steps.restpepsi.output.code }}
+  getHeaders: ${{ steps.restpepsi.output.headers }}
