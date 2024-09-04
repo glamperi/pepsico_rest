@@ -32,14 +32,20 @@ spec:
 #        content-type: 'application/json'
 
 
-    - id: snowretrieve
-      name: Verify ServiceNow Approval
-      action: servicenow:now:table:retrieveRecord
+    - id: restpepsi
+      name: Call our SpringBoot Rest Service
+      action: http:backstage:request
       input:
-        tableName: x_1520818_pepsico_pepsionboarding
-        sysId: "${{ parameters.approvalcode }}"
+        method: 'POST'
+        path: 'https://test-app-2099-dev-test-app-2099-dev.apps.cluster-qmdjh.qmdjh.sandbox1439.opentlc.com/api/hello'
+        headers:
+            test: 'hello'
+            foo: 'bar'
+        body:
+            name: 'test'
+            bar: 'foo'
       
-#output:
-#  getResponse: '{{ steps.backstage_request.output.body }}'
-#  getCode: '{{ steps.backstage_request.output.code }}'
-#  getHeaders: '{{ steps.backstage_request.output.headers }}'
+output:
+  getResponse: '{{ steps.restpepsi.output.body }}'
+  getCode: '{{ steps.restpepsi.output.code }}'
+  getHeaders: '{{ steps.restpepsi.output.headers }}'
