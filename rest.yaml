@@ -45,7 +45,7 @@ spec:
           name: 'test'
           bar: 'foo'
       
-output:
-  getResponse: ${{ steps.restpepsi.output.body }}
-  getCode: ${{ steps.restpepsi.output.code }}
-  getHeaders: ${{ steps.restpepsi.output.headers }}
+  output:
+    getResponse: ${{ steps.restpepsi.output.body }}
+    getCode: ${{ steps.restpepsi.output.code }}
+    getHeaders: ${{ steps.restpepsi.output.headers }}
