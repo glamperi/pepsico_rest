@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: pepsico-rest-call
-  title: Pepsico Rest 2.5
+  title: Pepsico Rest 2.6
   description: The Pepsico Rest
   tags:
     - rest
