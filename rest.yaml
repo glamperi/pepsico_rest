@@ -21,7 +21,7 @@ spec:
 
 
   
-steps:
+  steps:
 #  - id: backstage_request
 #    name: backstage request
 #    action: http:backstage:request
@@ -32,12 +32,12 @@ steps:
 #        content-type: 'application/json'
 
 
-  - id: snowretrieve
-    name: Verify ServiceNow Approval
-    action: servicenow:now:table:retrieveRecord
-    input:
-      tableName: x_1520818_pepsico_pepsionboarding
-      sysId: "${{ parameters.approvalcode }}"
+    - id: snowretrieve
+      name: Verify ServiceNow Approval
+      action: servicenow:now:table:retrieveRecord
+      input:
+        tableName: x_1520818_pepsico_pepsionboarding
+        sysId: "${{ parameters.approvalcode }}"
       
 #output:
 #  getResponse: '{{ steps.backstage_request.output.body }}'
