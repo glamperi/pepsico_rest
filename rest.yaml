@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: pepsico-rest-call
-  title: Pepsico Rest 1.6
+  title: Pepsico Rest 1.7
   description: The Pepsico Rest
   tags:
     - rest
@@ -29,7 +29,9 @@ spec:
       action: http:backstage:request
       input:
         method: 'GET'
-        path: '/pepsico-service'
+        path: 'https://api.thecatapi.com/v1/images/0XYvRd7oD'
+        headers:
+          content-type: 'application/json'
         
       
   output:
