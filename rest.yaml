@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: pepsico-rest-call
-  title: Pepsico Rest 1.3
+  title: Pepsico Rest 1.4
   description: The Pepsico Rest
   tags:
     - rest
@@ -10,15 +10,7 @@ metadata:
 spec:
   owner: rhdh
   type: service
-  parameters:
-    - title: Provide Dev Flow Variables 
-      required:
-        - approvalcode
-      properties:
-        approvalcode:
-          title: Service Now Approval Code
-          type: string 
-
+  
 
   
   steps:
@@ -36,14 +28,9 @@ spec:
       name: Call our SpringBoot Rest Service
       action: http:backstage:request
       input:
-        method: 'POST'
+        method: 'GET'
         path: 'https://test-app-2099-dev-test-app-2099-dev.apps.cluster-qmdjh.qmdjh.sandbox1439.opentlc.com/api/hello'
-        headers:
-          test: 'hello'
-          foo: 'bar'
-        body:
-          name: 'test'
-          bar: 'foo'
+        
       
   output:
     getResponse: ${{ steps.restpepsi.output.body }}
