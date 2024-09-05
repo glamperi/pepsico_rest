@@ -2,7 +2,7 @@ apiVersion: scaffolder.backstage.io/v1beta3
 kind: Template
 metadata:
   name: pepsico-rest-call
-  title: Pepsico Rest 2.6
+  title: Pepsico Rest 2.7
   description: The Pepsico Rest
   tags:
     - rest
@@ -24,29 +24,42 @@ spec:
 #        content-type: 'application/json'
 
 
-    - id: restpepsi
-      name: Call our SpringBoot Rest Service
+    - id: restspringboot
+      name: Call our Internal to Openshift Rest Service created in DevHub
       action: http:backstage:request
       input:
         method: 'GET'
         path: 'proxy/pepsico-service/api/hello'
 
-    - id: log-message
-      name: Log Message
-      action: debug:log
+    
+
+    
+
+    - id: restexternal
+      name: Call an External REST Call (Public Cats Service)
+      action: http:backstage:request
       input:
-        message: the code ${{ steps.restpepsi.output.code }}
+        method: 'GET'
+        path: 'proxy/cats-service/v1/images/0XYvRd7oD'
        
         
       
   output:
     text: 
-    - title: REST content
+    - title: REST Internal to OCP Example Response
       content: |
-        The info: 
-        - ResponseObject: ${{ steps.restpepsi.output.body | dump }}
-        - ResponseCode: ${{ steps.restpepsi.output.code }}
-        - ResponseHeaders: ${{ steps.restpepsi.output.headers | dump }}
+        The Raw Data: 
+        - ResponseBody: ${{ steps.restspringboot.output.body | dump }}
+        - ResponseCode: ${{ steps.restspringboot.output.code }}
+        - ResponseHeaders: ${{ steps.restspringboot.output.headers | dump }}
+    text: 
+    - title: REST External Cats Service Example Response
+      content: |
+        The Raw Data: 
+        - ResponseBody: ${{ steps.restexternal.output.body | dump }}
+        - ResponseCode: ${{ steps.restexternal.output.code }}
+        - ResponseHeaders: ${{ steps.restexternal.output.headers | dump }}
+
 
 
 
