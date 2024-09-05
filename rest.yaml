@@ -52,7 +52,7 @@ spec:
         - ResponseBody: ${{ steps.restspringboot.output.body | dump }}
         - ResponseCode: ${{ steps.restspringboot.output.code }}
         - ResponseHeaders: ${{ steps.restspringboot.output.headers | dump }}
-    text: 
+
     - title: REST External Cats Service Example Response
       content: |
         The Raw Data: 
